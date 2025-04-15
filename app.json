@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "MyBikeRental",
+    "slug": "MyBikeRental",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.suplink.MyBikeRental",
+      "config": {
+        "googleMapsApiKey": "process.env.EXPO_PUBLIC_IOS_GOOGLE_API_KEY"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "process.env.EXPO_PUBLIC_ANDROID_GOOGLE_API_KEY"
+        }
+      },
+      "package": "com.suplink.exponotes"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Expo-Note to use your location."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b9f8fd9d-9c0c-4bd1-8a4a-6c7f66c87a6c"
+      }
+    }
+  }
+}

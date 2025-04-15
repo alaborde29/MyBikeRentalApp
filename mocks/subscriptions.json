@@ -1,0 +1,37 @@
+[
+  {
+    "contractName": "Vélo Liberté",
+    "subscriptionName": "Abonnement Mensuel",
+    "content": "Offre réservée aux résidents de la métropole : bénéficiez d’un accès illimité aux vélos mécaniques pour vos trajets quotidiens. Ce forfait est exclusivement disponible pour les utilisateurs justifiant d’une adresse dans la zone couverte. La durée maximale de chaque trajet est de 30 minutes sans frais additionnels, au-delà un tarif progressif s’applique. Une pièce justificative sera demandée à l’inscription.",
+    "price": "9,90€/mois",
+    "href": "https://veloliberte.fr/abonnement-mensuel"
+  },
+  {
+    "contractName": "Vélo Électrique Plus",
+    "subscriptionName": "Formule Électrique",
+    "content": "Offre réservée aux résidents de la métropole : bénéficiez d’un accès illimité aux vélos mécaniques pour vos trajets quotidiens. Ce forfait est exclusivement disponible pour les utilisateurs justifiant d’une adresse dans la zone couverte. La durée maximale de chaque trajet est de 30 minutes sans frais additionnels, au-delà un tarif progressif s’applique. Une pièce justificative sera demandée à l’inscription.",
+    "price": "19,90€/mois",
+    "href": "https://veloliberte.fr/formule-electrique"
+  },
+  {
+    "contractName": "Pass Découverte",
+    "subscriptionName": "Abonnement 7 jours",
+    "content": "Offre réservée aux résidents de la métropole : bénéficiez d’un accès illimité aux vélos mécaniques pour vos trajets quotidiens. Ce forfait est exclusivement disponible pour les utilisateurs justifiant d’une adresse dans la zone couverte. La durée maximale de chaque trajet est de 30 minutes sans frais additionnels, au-delà un tarif progressif s’applique. Une pièce justificative sera demandée à l’inscription.",
+    "price": "5,00€",
+    "href": "https://veloliberte.fr/pass-decouverte"
+  },
+  {
+    "contractName": "Pack Famille",
+    "subscriptionName": "Formule Groupée",
+    "content": "Offre réservée aux résidents de la métropole : bénéficiez d’un accès illimité aux vélos mécaniques pour vos trajets quotidiens. Ce forfait est exclusivement disponible pour les utilisateurs justifiant d’une adresse dans la zone couverte. La durée maximale de chaque trajet est de 30 minutes sans frais additionnels, au-delà un tarif progressif s’applique. Une pièce justificative sera demandée à l’inscription.",
+    "price": "24,90€/mois",
+    "href": "https://veloliberte.fr/pack-famille"
+  },
+  {
+    "contractName": "Vélo à la Carte",
+    "subscriptionName": "Sans Engagement",
+    "content": "Offre réservée aux résidents de la métropole : bénéficiez d’un accès illimité aux vélos mécaniques pour vos trajets quotidiens. Ce forfait est exclusivement disponible pour les utilisateurs justifiant d’une adresse dans la zone couverte. La durée maximale de chaque trajet est de 30 minutes sans frais additionnels, au-delà un tarif progressif s’applique. Une pièce justificative sera demandée à l’inscription.",
+    "price": "0,15€/min",
+    "href": "https://veloliberte.fr/velo-a-la-carte"
+  }
+]

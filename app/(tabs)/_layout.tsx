@@ -25,7 +25,7 @@ export default function TabLayout() {
   return (
     <Tabs
       initialRouteName={"Plan"}
-      screenOptions={{ tabBarActiveTintColor: 'blue' }}
+      screenOptions={{ tabBarActiveTintColor: 'blue', }}
       screenListeners={{
         tabPress: handleTabPress,
       }}

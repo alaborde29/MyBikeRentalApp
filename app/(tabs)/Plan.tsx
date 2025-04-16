@@ -1,6 +1,6 @@
 import { SafeAreaView } from "react-native-safe-area-context";
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import { Text, View, TextInput, StyleSheet, Keyboard, TouchableWithoutFeedback, Platform } from "react-native";
+import { Text, View, TextInput, StyleSheet, Keyboard, TouchableWithoutFeedback, Platform, TouchableOpacity } from "react-native";
 import { useEffect, useState } from "react";
 import { Searchbar, SegmentedButtons } from 'react-native-paper';
 import { FontAwesome } from "@expo/vector-icons";
@@ -9,6 +9,9 @@ import { useStationContext } from "@/context/stationsContext";
 import { StationType } from "@/services/jcd/bikeServices";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { useStations } from "@/hooks/jcd/useStations";
+import { useLiveLocation } from "@/hooks/useLiveLocation";
+import { SearchResults } from "@/components/SearchResults/SearchResults";
+import { MapButton } from "@/components/FavoriteFilter/FavoriteFilter";
 
 interface SearchbarProps {
   placeholder: string;
@@ -17,18 +20,13 @@ interface SearchbarProps {
   style?: object;
 }
 
-const StationMarker = ({ status }: { status: string }) => {
+const StationMarker = ({ station }: { station: StationType }) => {
   return (
     <View>
-      <FontAwesome6 size={40} name="location-dot" color={status == "OPEN" ? 'green' : 'red'} style={styles.marker} />
-    </View>
-  )
-}
-
-const ParkingMarker = ({ status }: { status: string }) => {
-  return (
-    <View>
-      <FontAwesome6 size={40} name="square-parking" color={'rgb(58, 108, 255)'} style={styles.marker && { backgroundColor: "" }} />
+      <FontAwesome6 size={40} name="location-pin" color={station.status == "OPEN" ? 'green' : 'red'} style={styles.marker} solid />
+      <View style={styles.bubble}>
+        <Text style={styles.bubbleText}>{station.available_bikes}</Text>
+      </View>
     </View>
   )
 }
@@ -68,7 +66,7 @@ const MarkerList = ({ filters }: { filters: string[] }) => {
             router.push({ pathname: '/Stations', params: { stationId: station.number.toString() } });
           }}
         >
-          <StationMarker status={station.status} />
+          <StationMarker station={station} />
         </Marker>
       ))}
     </>
@@ -79,6 +77,7 @@ const MarkerList = ({ filters }: { filters: string[] }) => {
 export default function Plan() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState(['stations'])
+  const { location, errorMsg } = useLiveLocation();
   const [region, setRegion] = useState({
     latitude: 47.21805891998459,
     longitude: -1.5522669832909846,
@@ -96,7 +95,7 @@ export default function Plan() {
           onRegionChange={setRegion}
           onRegionChangeComplete={setRegion}
           provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
-          
+
         >
           <MarkerList filters={filters} />
         </MapView>
@@ -107,7 +106,13 @@ export default function Plan() {
             value={searchQuery}
             style={styles.searchbarContainer}
           />
+          <View style={styles.mapButtonsContainer}>
+            <MapButton icon="star" iconColor="rgb(255, 211, 66)" onPress={() => { }} />
+            <MapButton icon="arrows-rotate" iconColor="rgb(133, 133, 133)" onPress={() => { }} />
+            <MapButton icon="crosshairs" iconColor="rgb(115, 115, 115)" onPress={() => { }} />
+          </View>
         </SafeAreaView>
+        {(searchQuery != "") ? <SearchResults query={searchQuery} /> : <></>}
       </View>
     </TouchableWithoutFeedback>
 
@@ -127,12 +132,13 @@ const styles = StyleSheet.create({
   map: {
     width: "100%",
     height: "100%",
-    zIndex: -1
+    zIndex: -2
   },
   searchbarContainer: {
     backgroundColor: "rgb(255, 255, 255)",
     borderColor: "rgb(178, 178, 178)",
-    borderWidth: 1
+    borderWidth: 1,
+    zIndex: -1
   },
   marker: {
     shadowColor: "#000",
@@ -149,5 +155,32 @@ const styles = StyleSheet.create({
     gap: 15,
     paddingHorizontal: 15,
     color: "#fff"
-  }
+  },
+  mapButtonsContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: 'flex-start',
+    alignItems: "flex-end",
+    zIndex: 1,
+    gap: 10
+  },
+  bubble: {
+    position: 'absolute',
+    top: 5,
+    right: 5,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    minWidth: 20,
+    height: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
+    elevation: 1,
+  },
+  bubbleText: {
+    fontSize: 8,
+    fontWeight: 'bold',
+    color: 'black',
+  },
 });

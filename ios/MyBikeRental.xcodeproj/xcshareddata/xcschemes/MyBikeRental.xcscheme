@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "exponotes.app"
-               BlueprintName = "exponotes"
-               ReferencedContainer = "container:exponotes.xcodeproj">
+               BuildableName = "MyBikeRental.app"
+               BlueprintName = "MyBikeRental"
+               ReferencedContainer = "container:MyBikeRental.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "exponotesTests.xctest"
-               BlueprintName = "exponotesTests"
-               ReferencedContainer = "container:exponotes.xcodeproj">
+               BuildableName = "MyBikeRentalTests.xctest"
+               BlueprintName = "MyBikeRentalTests"
+               ReferencedContainer = "container:MyBikeRental.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "exponotes.app"
-            BlueprintName = "exponotes"
-            ReferencedContainer = "container:exponotes.xcodeproj">
+            BuildableName = "MyBikeRental.app"
+            BlueprintName = "MyBikeRental"
+            ReferencedContainer = "container:MyBikeRental.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "exponotes.app"
-            BlueprintName = "exponotes"
-            ReferencedContainer = "container:exponotes.xcodeproj">
+            BuildableName = "MyBikeRental.app"
+            BlueprintName = "MyBikeRental"
+            ReferencedContainer = "container:MyBikeRental.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

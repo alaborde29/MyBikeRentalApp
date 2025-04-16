@@ -20,18 +20,14 @@ export default function RootLayer() {
     <GestureHandlerRootView>
       <StationProvider>
         <AuthProvider>
-          <Stack screenOptions={{ headerShown: false}}>
+          <Stack >
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
             <Stack.Screen name="Login" options={{ headerShown: false }} />
             <Stack.Screen name="Register" options={{ headerShown: false }} />
             <Stack.Screen name="ForgotPassword" options={{ headerShown: false }} />
-            <Stack.Screen name="Station" options={{
-              headerTitle: "Station",
-              title: "Station",
+            <Stack.Screen name="Stations" options={{
+              headerShown: true,
               headerBackButtonDisplayMode: "minimal", 
-              headerRight: (props) => (
-                <FavoriteButton stationId=""/>
-              ),
             }} />
           </Stack>
         </AuthProvider>

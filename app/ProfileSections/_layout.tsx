@@ -12,13 +12,13 @@ export default function LayoutLayer() {
   const router = useRouter();
   return (
 
-          <Stack>
-            <Stack.Screen name="MyCards" options={{ headerShown: true }} />
-            <Stack.Screen name="MyFavorites" options={{ headerShown: true }} />
-            <Stack.Screen name="MyItinerary" options={{ headerShown: true }} />
-            <Stack.Screen name="MyPayments" options={{ headerShown: true }} />
-            <Stack.Screen name="MyStats" options={{ headerShown: true }} />
-            <Stack.Screen name="MySubscriptions" options={{ headerShown: true }} />
-          </Stack>
+    <Stack screenOptions={{ headerShown: true }}>
+      <Stack.Screen name="MyCards" options={{ title: "My Cards" }} />
+      <Stack.Screen name="MyFavorites" options={{ title: "My Favorites" }} />
+      <Stack.Screen name="MyItinerary" options={{ title: "My Itineraries" }} />
+      <Stack.Screen name="MyPayments" options={{ title: "My Payments" }} />
+      <Stack.Screen name="MyStats" options={{ title: "My Statistics" }} />
+      <Stack.Screen name="MySubscriptions" options={{ title: "My Subscriptions" }} />
+    </Stack>
   );
 }

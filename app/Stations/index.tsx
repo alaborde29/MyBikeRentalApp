@@ -1,10 +1,10 @@
 import { StationType } from "@/services/jcd/bikeServices";
 import { TouchableOpacity, View, Text } from "react-native";
 import { StyleSheet } from "react-native";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import MapView, { Marker } from "react-native-maps";
 import { useStationContext } from "@/context/stationsContext";
-import { useLocalSearchParams, useGlobalSearchParams, useRouter } from 'expo-router';
+import { useLocalSearchParams, useGlobalSearchParams, useRouter, useNavigation } from 'expo-router';
 import { FlashList } from "@shopify/flash-list";
 import { FontAwesome } from "@expo/vector-icons";
 import Swipeable from 'react-native-gesture-handler/ReanimatedSwipeable';
@@ -20,7 +20,8 @@ const StationDetails = ({ station }: { station: StationType }) => {
   )
 }
 
-export default function Stations() {
+export default function StationsScreen() {
+  const navigation = useNavigation();
   const { stationId } = useLocalSearchParams();
   console.log("stationId:", stationId);
   const station = useStationContext().stations.find(station => station.number.toString() == stationId);
@@ -29,6 +30,12 @@ export default function Stations() {
     console.log(`Station with ID ${stationId} not found`);
     return null;
   }
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: `${station.name.replace(/^.*?-/, "")}`
+    });
+  }, [navigation, stationId]);
 
   return (
 

@@ -2,13 +2,13 @@ import { FontAwesome6 } from "@expo/vector-icons"
 import { StyleSheet, Text, View } from "react-native"
 
 export const UserStats = () => {
-  const textu = "dd"
+
   return (
     <View style={styles.container}>
       <View style={styles.oddContainer}>
-        <FontAwesome6 name="person-biking" size={20} />
+        <FontAwesome6 name="clock" size={20} />
         <Text>:</Text>
-        <Text>26.0 Km</Text>
+        <Text>26h 34m</Text>
       </View>
       <View style={styles.evenContainer}>
         <FontAwesome6 name="route" size={20} />
@@ -16,7 +16,7 @@ export const UserStats = () => {
         <Text>26.0 Km</Text>
       </View>
       <View style={styles.oddContainer}>
-        <FontAwesome6 name="bicycle" size={20} />
+        <FontAwesome6 name="person-biking" size={20} />
         <Text>:</Text>
         <Text>32</Text>
       </View>
